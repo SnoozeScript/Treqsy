@@ -93,14 +93,9 @@ lib/
 
 ## 🔧 Configuration
 
-1. Create a `.env` file in the root directory with your configuration:
-   ```
-   API_BASE_URL=your_api_url
-   FIREBASE_API_KEY=your_firebase_api_key
-   # Add other environment variables as needed
-   ```
 
-2. Update `lib/core/constants/app_constants.dart` with your app-specific configurations.
+
+1. Update `lib/core/constants/app_constants.dart` with your app-specific configurations.
 
 ## 🤝 Contributing
 
