@@ -1,19 +1,36 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
 *.pyd
-.Python
+
+# Virtual environments
 env/
 venv/
-.env
-.venv
-.mypy_cache/
+.venv/
+.env/
+.Python
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Testing
 .pytest_cache/
 .coverage
 coverage.xml
+
+# mypy
+.mypy_cache/
+
+# tox
 .tox/
+
+# IDEs and editors
 .idea/
 .vscode/
+
+# macOS
 .DS_Store
-.pdm.toml
-.pdm.lock 
+
+# PDM files
+pdm.toml
+pdm.lock
