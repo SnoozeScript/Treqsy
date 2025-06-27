@@ -1,23 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:livestream_platform/core/constants/app_constants.dart';
-import 'package:livestream_platform/core/routes/app_router.dart';
-import 'package:livestream_platform/core/theme/app_theme.dart';
-import 'package:livestream_platform/features/splash/presentation/pages/splash_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:treqsy_platform/widgets/auth_checker.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  
-  // Initialize any services here (e.g., Firebase, Analytics, etc.)
-  _initializeApp();
-  
-  runApp(const MyApp());
-}
-
-Future<void> _initializeApp() async {
-  // Add any async initialization here
-  // e.g., await Firebase.initializeApp();
-  // e.g., await Hive.initFlutter();
-  // e.g., await setupLocator(); // For dependency injection
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -26,20 +12,28 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: AppConstants.appName,
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      onGenerateRoute: (settings) => AppRouter.generateRoute(settings),
-      home: const SplashPage(),
-      builder: (context, child) {
-        return MediaQuery(
-          // This ensures text scales uniformly on all devices
-          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-          child: child!,
-        );
-      },
+      title: 'Treqsy Platform',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: const Color(0xFF121212),
+        inputDecorationTheme: const InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blueAccent,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+        ),
+      ),
+      home: const AuthChecker(),
     );
   }
-}
+} 

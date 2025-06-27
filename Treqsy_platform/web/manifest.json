@@ -1,6 +1,6 @@
 {
-    "name": "livestream_platform",
-    "short_name": "livestream_platform",
+    "name": "treqsy_platform",
+    "short_name": "treqsy_platform",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.coansister" "\0"
-            VALUE "FileDescription", "livestream_platform" "\0"
+            VALUE "CompanyName", "com.example" "\0"
+            VALUE "FileDescription", "treqsy_platform" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "livestream_platform" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 com.coansister. All rights reserved." "\0"
-            VALUE "OriginalFilename", "livestream_platform.exe" "\0"
-            VALUE "ProductName", "livestream_platform" "\0"
+            VALUE "InternalName", "treqsy_platform" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "treqsy_platform.exe" "\0"
+            VALUE "ProductName", "treqsy_platform" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

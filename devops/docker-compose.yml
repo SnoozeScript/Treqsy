@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: treqsy-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: treqsy
+
+  backend:
+    build: ../treqsy_backend
+    container_name: treqsy-backend
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ../treqsy_backend:/app
+    env_file:
+      - ../.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data: 
